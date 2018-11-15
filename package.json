@@ -1,0 +1,21 @@
+{
+  "scripts": {
+    "serve": "parcel serve src/index.pug --out-dir ./dist/",
+    "dev": "parcel dev src/index.pug --out-dir ./dist/ ",
+    "watch": "parcel watch src/index.pug --out-dir ./dist/",
+    "build": "parcel build src/index.pug --out-dir ./dist/ --public-url ./ --no-source-maps",
+    "clean": "rm -rf ./dist"
+  },
+  "dependencies": {
+    "ionicons-inline": "1.0.0",
+    "jquery": "^3.3.1",
+    "parallax-js": "^3.1.0",
+    "parcel": "^1.9.7",
+    "swiper": "^4.4.1",
+    "zepto": "^1.2.0"
+  },
+  "devDependencies": {
+    "node-sass": "^4.9.3",
+    "pug": "^2.0.3"
+  }
+}

@@ -1,0 +1,917 @@
+@import '~ionicons-inline/dist/ionicons';
+
+*{
+  padding: 0;
+  margin: 0;
+  transition-timing-function: cubic-bezier(.19, 1, .22, 1);
+}
+
+body{
+  font-family: "Microsoft YaHei";
+  -webkit-font-smoothing: antialiased;
+  color: #333;
+  font-size: 14px;
+}
+
+p{
+  line-height: 2.2em;
+}
+
+.clear:after {
+  content: "";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+
+.left{float: left;}
+.right{float: right;}
+
+a,
+a:link{
+  color: #0877cf;
+}
+
+
+.container {
+  margin: 0 auto;
+  width: 1100px;
+}
+
+.main{
+  .ch{
+    padding: 70px 0 100px 0;
+
+    h2{
+      font-size: 36px;
+      padding-bottom: 50px;
+    }
+  }
+  .hello{
+    background: #f5f5f5;
+    color: #fff;
+    height: 500px;
+    position: relative;
+
+    .background .layer{
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    .background .layer_bg{
+      background: linear-gradient(to top, #0877cf, #3e52b5);
+      z-index: 1;
+    }
+
+    .background .layer_front{
+      background: url('../image/dove.png') no-repeat;
+      background-position: bottom center;
+      background-size: auto 100%;
+      z-index: 2;
+    }
+
+    .background .layer_cover{
+      background: linear-gradient(to top, rgba(0, 0, 0, .3) 20%, rgba(0, 0, 0, 0) 80%);
+      z-index: 3;
+    }
+
+
+    .content{
+      position: absolute;
+      bottom: 8%;
+      left: 0;
+      width: 100%;
+      z-index: 5;
+    }
+
+    h1{
+      font-size: 50px;
+    }
+    h3{
+      font-size: 20px;
+      font-weight: normal;
+      padding-top: 10px;
+      padding-bottom: 30px;
+    }
+
+    h1.slogan{
+      position: relative
+    }
+
+    h1.slogan span{
+      height: 100%;
+      width: 3em;
+      display: inline-block;
+      transition: 1.4s all;
+    }
+
+    h1.slogan span b{
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: .5s all;
+    }
+
+    .btn a{
+      display: inline-block;
+      padding: 4px 13px;
+      font-size: 12px;
+      border: 1px #fff solid;
+      color: #fff;
+      text-decoration: none;
+      margin-right: 20px;
+      opacity: .86;
+      transition: .3s all;
+    }
+
+    .btn a:hover{
+      opacity: 1;
+      background: #fff;
+      color: #0877cf;
+    }
+    .btn:hover a{
+      opacity: 1;
+    }
+  }
+
+  .s-outing{
+    animation: outing .5s ease-out forwards;
+  }
+  .s-entering {
+    animation: entering .5s ease-out forwards;
+  }
+
+  @keyframes outing {
+    from {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+
+    to {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+  }
+
+  @keyframes entering {
+    from {
+      opacity: 0;
+      transform: translateX(10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+
+  .about{
+    .item{
+      width: 50%;
+      height: 150px;
+      float: left;
+      .icon {
+        float: left;
+        margin-right: 25px;
+      }
+      .content{
+        margin-left: 70px;
+        h3{
+          font-size: 18px;
+          padding-bottom: 15px;
+        }
+      }
+    }
+    .item:nth-child(1) .icon{
+      @include ion-md-checkbox-outline(45px, #576999);
+    }
+    .item:nth-child(2) .icon{
+      @include ion-md-flash(45px, #576999);
+    }
+    .item:nth-child(3) .icon{
+      @include ion-md-body(45px, #576999);
+    }
+    .item:nth-child(4) .icon{
+      @include ion-md-heart(45px, #576999);
+    }
+
+    .item:nth-child(1),
+    .item:nth-child(2){
+      margin-bottom: 40px;
+      margin-top: 15px;
+    }
+  }
+
+  .feed:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, .78);
+    z-index: 1;
+    transition: .3s all;
+  }
+
+  .feed{
+    position: relative;
+    background-color: #fff;
+    transition: .3s all;
+    background: url('../image/projects_bg.jpg') no-repeat center center;
+    background-size: cover;
+    .container{
+      position: relative;
+      z-index: 2;;
+    }
+    .blogbox{
+      a{
+        text-decoration: none;
+        color: initial;
+        line-height: 1.7em;
+        transition: .3s all;
+      }
+      a:hover{
+        color: #0877cf;
+        letter-spacing: .2em;
+      }
+      .item h4{
+        display:inline-block;
+        font-size: 20px;
+        font-weight: normal;
+        letter-spacing: .15em;
+      }
+      .item.more{
+        color: #666;
+        padding-top: 30px;
+        vertical-align: middle;
+      }
+      .item.more .icon{
+        @include ion-md-arrow-forward(20px, #576999);
+      }
+      .sub{
+        display: inline-block;
+        padding-left: 5px;
+        letter-spacing: 0.1em;
+      }
+      .sub a{
+        display: inline-block;
+        font-size: 14px;
+        color: #888;
+        padding-left: 5px;
+      }
+    }
+  }
+
+  .product{
+    background-size: cover;
+    background-color: #efefef;
+    color: #333;
+
+
+    .list a,
+    .list a:link,
+    .list a:hover,
+    .list a:visited {
+      color: #fff;
+    }
+
+    .container{
+      position: relative;
+      z-index: 5;
+    }
+
+    .list{
+      margin-right: -1.5%;
+      margin-left: -1.5%;
+    }
+
+    .list li{
+      position: relative;
+      width: 22%;
+      margin: 1.5%;
+      height: 160px;
+      float: left;
+      box-sizing: border-box;
+      list-style: none;
+      box-shadow: 
+      0 10px 20px rgba(0, 0, 0, .12),
+      0 2px 12px rgba(0, 0, 0, .08);
+      overflow: hidden;
+      border-radius: 5px;
+      .img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;;
+        height: 100%;
+        width: 100%;
+        background-color: #333;
+        background-size: cover;
+        background-position: center center;
+        filter: blur(3px);
+        transform: scale(1.1);
+        transition: .3s all;
+      }
+      p{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        line-height: 160px;
+        text-align: center;
+        z-index: 10;
+        transition: .3s all;
+        text-shadow: 0 0 10px rgba(0, 0, 0, .18);
+      }
+    }
+    .list li .img:after{
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, .28);
+      z-index: 5;
+      transition: .3s all;
+    }
+
+    .list li:hover{
+      .img {
+        filter: blur(0px);
+        transform: scale(1.0);
+      }
+      p {
+        transform: scale(0.9);
+        opacity: 0;
+      }
+      .img:after {
+        background: rgba(0, 0, 0, 0);
+      }
+    }
+
+    li[case=neu_www] .img {
+      background-image: url('../image/projects/neu_www.jpg')
+    }
+    li[case=neu_news] .img {
+      background-image: url('../image/projects/neu_news.jpg')
+    }
+    li[case=neu_go] .img {
+      background-image: url('../image/projects/neu_go.jpg')
+    }
+    li[case=neu_qa] .img {
+      background-image: url('../image/projects/neu_qa.jpg')
+    }
+    li[case=new_game] .img {
+      background-image: url('../image/projects/new_game.jpg')
+    }
+    li[case=wechat_gateway] .img {
+      background-image: url('../image/projects/wechat_gateway.jpg')
+    }
+
+    .textlist{
+      padding-top: 20px;
+    }
+
+    .textlist a,
+    .textlist a:link,
+    .textlist a:hover,
+    .textlist a:visited{
+      text-decoration: none;
+      display: inline-block;
+      margin: 10px 30px 10px 0;
+      transition: .3s all;
+      color: #333;
+    }
+
+    .textlist a:hover{
+      background-color: #fff;
+      color: #0877cf;
+    }
+  }
+
+  .join{
+    .remember{
+      margin: 16px -1.5%;
+      a{
+        text-decoration: none;
+        color: initial
+      }
+      a:hover .person {
+         animation: index-link-active .75s cubic-bezier(0.315, 0.605, 0.375, 0.925) forwards;
+        box-shadow: 0 15px 35px 0 rgba(24, 44, 79, .15);
+        }
+      .person{
+        float: left;
+        box-sizing: border-box;
+        width: 29.333%;
+        padding: 15px 1.5%;
+        margin: 5px 0.5%;
+        transition: .3s all;
+        border-radius: 5px;
+        .cover{
+          float: left;
+          margin-right: 20px;
+        }
+        .cover img{
+          height: 46px;
+          width: 46px;
+        }
+        .info p{
+          line-height: 1.8em;
+        }
+        .info span{
+          font-size: 12px;
+          color: #999;
+          font-style: italic;
+        }
+      }
+    }
+  }
+
+  .says{
+    position: relative;
+    padding: 0;
+    background-color: #efefef;
+
+    .swiper-container-horizontal>.swiper-pagination-bullets,
+    .swiper-pagination-custom,
+    .swiper-pagination-fraction {
+      bottom: 20%;
+      left: initial;
+      right: 0;
+      width: 20%;
+    }
+
+    .swiper-container {
+      width: 100%;
+      height: 100px;
+      padding: 90px 0;
+    }
+    .swiper-bg{
+      background-image: url('../image/says_bg.png');
+      background-size: cover;
+      background-size: auto 100%;
+      background-repeat: no-repeat;
+      background-position: center center;
+      position: absolute;
+      width: 130%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: .18;
+    }
+    .item{
+      display: inline-block;
+      img.avatar{
+        height: 90px;
+        width: 90px;
+        border-radius: 100%;
+        float: left;
+      }
+      .content{
+        margin-left: 150px;
+        .icon {
+          @include ion-md-quote(45px, #576999);
+        }
+        .speak{
+          font-size: 20px;
+          padding-bottom: 20px;
+        }
+        p.small{
+          font-size: 14px;
+          color: #888;
+        }
+      }
+    }
+  }
+
+  .join{
+    .left{
+      width: 25%;
+      padding-right: 10%;
+      .joinbtn{
+        display: block;
+        text-align: center;
+        width: 100%;
+        height: 55px;
+        line-height: 55px;
+        color: #fff;
+        font-size: 14px;
+        text-decoration: none;
+        border-radius: 5px;
+        box-shadow: 0 1px 5px 0 rgba(24, 44, 79, .07),
+        0 5px 10px 0 rgba(24, 44, 79, .1);
+        background-color: #4568DC;
+        background: linear-gradient(to bottom right, #4568DC 0%, #B06AB3 100%);
+        transition: .3s all;
+        margin-bottom: 30px;
+        opacity: .8;
+      }
+
+
+       .joinbtn:hover {
+         transform: translateY(-3px);
+         box-shadow: 0 15px 35px 0 rgba(24, 44, 79, .15);
+         opacity: 1;
+       }
+
+       .joinbtn:nth-child(1){
+         background: linear-gradient(132.65deg, #66E4A7 0, #11BFCA 100%);
+       }
+
+       .joinbtn:nth-child(2){
+         background: linear-gradient(90deg, #0097FF 0, #005EFF 100%);
+       }
+
+       .joinbtn:nth-child(3){
+         background: linear-gradient(to left, #4568DC 0%, #B06AB3 100%);
+       }
+    }
+    .right{
+      width: 65%;
+      .item{
+        padding-bottom: 30px;
+        float: left;
+        width: 45%;
+        padding-right: 5%;
+        
+        p{
+          line-height: 1.87em;
+          margin-bottom: 12px;
+        }
+
+        h5{
+          font-size: 16px;
+          margin-bottom: 20px;
+        }
+        p.small{
+          color: #aaa;
+          font-style: italic;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+  
+  .contact{
+    background-color: #efefef;
+    .left{
+      width: 25%;
+      padding-right: 10%;
+
+      .subsuccess,
+      .suberror{
+        display: none;
+        .icon{
+          margin-bottom: 10px;
+          @include ion-md-checkmark-circle-outline(40px, #576999);
+        }
+        .small{
+          color: #888;
+          font-size: 13px;
+        }
+      }
+
+      .suberror .icon {
+        @include ion-md-help(40px, #576999);
+      }
+
+      h3{
+        padding-bottom: 50px;
+      }
+      input{
+        box-sizing: border-box;
+        width: 100%;
+        border: none;
+        outline: none;
+        background: none;
+        background-color: #fff;
+        padding: 10px;
+        height: 50px;
+        margin-bottom: 20px;
+        border: transparent 1px solid;
+        border-radius: 5px;
+      }
+      input:focus{
+        border: #0877cf 1px solid;
+      }
+      a.subscribe,
+      a.subscribe:link{
+        display: inline-block;
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        text-decoration: none;
+        color: #fff;
+        background-color: #0877cf;
+            background: linear-gradient(to left, #4568DC 0%, #B06AB3 100%);
+        border-radius: 5px;
+        box-shadow: 0 1px 5px 0 rgba(24, 44, 79, .07),
+        0 5px 10px 0 rgba(24, 44, 79, .1);
+        transition: .3s all;
+        opacity: .8;
+      }
+
+      a.subscribe:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 35px 0 rgba(24, 44, 79, .15);
+        opacity: 1;
+      }
+    }
+    .right{
+      width: 65%;
+      a{
+        position: relative;
+        display:inline-block;
+        width: 30.33%;
+        margin: 0 1.5%;
+        margin-bottom: 25px;
+        text-decoration: none;
+        color: #333;
+        height: 80px;
+        line-height: 80px;
+        text-align: center;
+        border-radius: 5px;
+        transition: .3s all;
+      }
+      a:hover {
+        box-shadow: 0 15px 35px 0 rgba(24, 44, 79, .15);
+        background-color: #66ccff;
+        animation: index-link-active .75s cubic-bezier(0.315, 0.605, 0.375, 0.925) forwards;
+      }
+
+      a[case=mail]:hover{
+        background-color: #0877cf;
+      }
+      a[case=qq]:hover {
+        background-color: #66ccff;
+      }
+      a[case=wechat]:hover {
+        background-color: #3DD571;
+      }
+      a[case=weibo]:hover {
+        background-color: #D36262;
+      }
+      a[case=github]:hover {
+        background-color: #252525;
+      }
+      a[case=git]:hover {
+        background-color: #D49355;
+      }
+
+      a[case=mail] .icon svg {
+        color: #0877cf;
+      }
+
+      a[case=qq] .icon svg {
+        color: #66ccff;
+      }
+
+      a[case=wechat] .icon svg {
+        color: #3DD571;
+      }
+
+      a[case=weibo] .icon svg {
+        color: #D36262;
+      }
+
+      a[case=github] .icon svg {
+        color: #252525;
+      }
+
+      a[case=git] .icon svg {
+        color: #D49355;
+      }
+
+      a .icon,
+      a span{
+        position: relative;
+        z-index: 5;
+      }
+
+      .icon{
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 80px;
+        margin-right: 20px;
+      }
+      .icon svg{
+        height: 28px;
+        vertical-align: middle;
+        color: #576999;
+        transition: .3s all;
+      }
+
+      span{
+        display: inline-block;
+        width: 60px;
+        transition: .3s all;
+      }
+
+      a:hover .icon,
+      a:hover .icon svg,
+      a:hover span{
+        color: #fff;
+      }
+
+      img.wechat_qrcode{
+        position: absolute;
+        bottom: 120%;
+        left: 0;
+        width: 140px;
+        height: 140px;
+        z-index: 20;
+        transition: .3s all;
+        transform: translateY(20px);
+        opacity: 0;
+        pointer-events: none;
+        overflow: hidden;
+      }
+      a:hover img.wechat_qrcode{
+        opacity: 1;
+        display: inline;
+        transform: translateY(0);
+        pointer-events: normal;
+        box-shadow: 0 15px 35px 0 rgba(24, 44, 79, .15);
+      }
+    }
+  }
+  .footer{
+    background-color: #252525;
+    background: linear-gradient(to bottom, #42275a 0%, #734b6d 100%);
+    color: #fff;
+    img.logo{
+      height: 100px;
+      float: left;
+      margin-right: 60px;
+    }
+    h4{
+      font-weight: normal;
+      font-size: 20px;
+      padding-bottom: 20px;
+    }
+    a,
+    a:link{
+      color: #fff;
+    }
+  }
+}
+
+ @keyframes index-link-active {
+   0% {
+     transform: perspective(1600px) rotateX(0) rotateY(0) translateZ(0);
+   }
+
+   16% {
+     transform: perspective(1600px) rotateX(10deg) rotateY(5deg) translateZ(32px);
+   }
+
+   100% {
+     transform: perspective(1600px) rotateX(0) rotateY(0) translateZ(65px);
+   }
+ }
+
+ @keyframes index-link {
+   0% {
+     transform: perspective(1600px) rotateX(0) rotateY(0) translateZ(65px);
+   }
+
+   100% {
+     transform: perspective(1600px) rotateX(0) rotateY(0) translateZ(0);
+   }
+ }
+@media(max-width: 700px){
+  body{
+    line-height: 1.4;
+    font-size: 13px;
+  }
+  .container{
+    width: 90%;
+    padding: 0 5%;
+  }
+  .left{float: none;}
+  .right{float:none;}
+  .frame .left,
+  .frame .right{
+    width: auto!important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .main .hello{
+    height: 200px;
+  }
+
+  .main .hello h1 {
+    font-size: 30px;
+  }
+
+  .main .hello h1.slogan span {
+    height: 42px;
+    display: block;
+  }
+
+  .main .hello h3{
+    font-size: 14px;
+  }
+  .main .hello .btn a{
+    display: none;
+  }
+
+  .main .about .item .icon{
+    height: 30px;
+    width: 30px;
+  }
+
+  .main .about .item .icon{
+    margin-right: 15px;
+  }
+
+  .main .about .item .content{
+    margin-left: 60px;
+  }
+  .main .about .item:nth-child(1),
+  .main .about .item:nth-child(2){
+    margin: 0;
+  }
+  .main .about .item {
+    width: auto;
+    height: auto;
+    margin-bottom: 20px !important;
+  }
+
+  .main .product .list li{
+    width: 97%;
+    float: left;
+    height: 80px;
+  }
+
+  .main .product .list li p{
+    line-height: 80px;
+    height: 80px;
+    font-size: 12px;
+  }
+
+  .main .join .remember .person{
+    width: 100%;
+    height: auto;
+  }
+
+  .main .join .right{
+    padding-top: 20px;
+  }
+
+  .main .join .right .item{
+    width: auto;
+    padding: 0;
+    padding-bottom: 20px;
+  }
+
+  .main .contact .right{
+    padding-top: 20px;
+  }
+
+  .main .contact .right a{
+    width: 50%;
+    margin: 0;
+  }
+
+  .main .join .left .joinbtn{
+    font-size: 13px;
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 20px;
+  }
+
+  .main .feed .item{
+    padding-bottom: 10px;
+  }
+  .main .says .item .content .speak{
+    font-size: 16px;
+  }
+  .main .says .swiper-container{
+    height: auto;
+  }
+  .main .says .item img.avatar{
+    float: none;
+    height: 60px;
+    width: 60px;
+    margin-bottom: 20px;
+  }
+  .main .says .item .content {
+    margin-left: 0;
+  }
+  .main .says .item .content .icon{
+    height: 32px;
+    width: 32px;
+  }
+  .main .footer img.logo {
+      float: none;
+      margin-bottom: 30px;
+  }
+}
