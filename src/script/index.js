@@ -1,5 +1,6 @@
 import Swiper from 'swiper';
 import $ from 'jquery';
+import '../style/index.scss';
 
 console.log("%c/* Powered by Shimmer Network Studio */", "color:green");
 console.log("%c/* by Nekotora Ver.201809 */", "color:green");
@@ -7,7 +8,7 @@ console.log("%c( ´ ▽ ` )ﾉ 小小世界中的又一个Web组织，微光网�
 
 $(function () {
   loadBlog();
-  $('a[data-goto]').on('click', function () { 
+  $('a[data-goto]').on('click', function () {
     $("html,body").animate({
       scrollTop: $("#" + $(this).data('goto')).offset().top
     }, 1000);
@@ -32,12 +33,12 @@ $(function () {
         "email": email,
       },
       dataType: 'json',
-      url: "http://shimmer.neusoft.edu.cn/blog/subscribe.php",
+      url: "/blog/subscribe.php",
       success: function (data) {
         if (data.status == 'success') {
           $('.subarea').slideUp();
           $('.subsuccess').slideDown();
-        } else { 
+        } else {
           $('.subarea').slideUp();
           $('.suberror').slideDown();
         }
@@ -52,7 +53,7 @@ $(function () {
 
   function loadBlog(element) {
     $.ajax({
-      url: "http://shimmer.neusoft.edu.cn/blog/article.php",
+      url: "/blog/article.php",
       dataType: 'json',
       success: function (data) {
         data.forEach(item => {
@@ -119,7 +120,7 @@ $(function () {
     var wordBox = $('.hello .slogan span');
     var wordElNow = $('.hello .slogan span b');
     var word = randomWord();
-    while (word == wordElNow.text()) { 
+    while (word == wordElNow.text()) {
       word = randomWord();
     }
     var wordElNext = $('<b>' + word + '</b>')
