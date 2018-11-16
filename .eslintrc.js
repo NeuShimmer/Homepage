@@ -21,6 +21,10 @@ module.exports = {
   // "error" 或 2 - 开启规则，使用错误级别的错误：error (当被触发的时候，程序会退出)
   rules: {                                 // 启用额外的规则或覆盖默认的规则
     // "extends": "eslint:recommended",    // 启用推荐规则
+    "quotes": ["off", "single"],
+    "semi": ["off", "never"],
+    "space-before-function-paren": "off",
+    "no-new": "off"
   },
   // "globals": { "var1": true,"var2": false }    // 配置全局变量
 }

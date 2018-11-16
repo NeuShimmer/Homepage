@@ -14,9 +14,9 @@ $(function () {
     }, 1000);
   })
 
-  $('#subscribeButton').on('click',function () {
+  $('#subscribeButton').on('click', function () {
     var email = $('#subscribeEmail').val();
-    if (email == '') {
+    if (email === '') {
       alert('请输入电子邮箱地址');
       $('#subscribeEmail').focus();
       return false;
@@ -30,12 +30,12 @@ $(function () {
     $.ajax({
       method: "post",
       data: {
-        "email": email,
+        "email": email
       },
       dataType: 'json',
       url: "/blog/subscribe.php",
       success: function (data) {
-        if (data.status == 'success') {
+        if (data.status === 'success') {
           $('.subarea').slideUp();
           $('.subsuccess').slideDown();
         } else {
@@ -62,7 +62,7 @@ $(function () {
                     <h4><a href="${item.url}">${item.title}</a>
                     <div class="sub">
                       <a href="${item.author.url}">@${item.author.screenName}</a>
-                      <a>${time.getFullYear()+'-'+(time.getMonth() + 1)+'-'+time.getDate()}</a>
+                      <a>${time.getFullYear() + '-' + (time.getMonth() + 1) + '-' + time.getDate()}</a>
                     </div></h4>
                   </div>`
           $('.blogbox .content').append($(tpl))
@@ -76,18 +76,18 @@ $(function () {
     })
   }
 
-  var saysSwiper = new Swiper('.swiper-container', {
+  new Swiper('.swiper-container', {
     speed: 2000,
     centeredSlides: true,
     grabCursor: true,
     parallax: true,
     pagination: {
       el: '.swiper-pagination',
-      clickable: true,
+      clickable: true
     },
     autoplay: {
       delay: 2500,
-      disableOnInteraction: false,
+      disableOnInteraction: false
     }
   })
 
@@ -105,7 +105,7 @@ $(function () {
     '嘤嘤嘤',
     'Boom Shakalaka',
     '完成了不起的事情',
-    'Make Neusoft Great Again',
+    'Make Neusoft Great Again'
   ];
   function random(Min, Max) {
     var Range = Max - Min;
@@ -120,7 +120,7 @@ $(function () {
     var wordBox = $('.hello .slogan span');
     var wordElNow = $('.hello .slogan span b');
     var word = randomWord();
-    while (word == wordElNow.text()) {
+    while (word === wordElNow.text()) {
       word = randomWord();
     }
     var wordElNext = $('<b>' + word + '</b>')
